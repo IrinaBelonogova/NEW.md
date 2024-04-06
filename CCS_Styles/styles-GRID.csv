@@ -1,0 +1,109 @@
+﻿*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.wrapper {
+    height:100vh;
+    display:grid;
+    /*grid-template-columns: auto;
+    grid-template-rows: 50px auto 100px;
+    grid-template-areas: 
+        "header"
+        "content"
+        "footer";*/
+ 
+    /*grid-template-columns: 200px auto;
+    grid-template-rows: 50px auto 100px; 
+    grid-template-areas:
+        "header header"
+        "SideBar content"
+        "footer footer"; для двух колонок*/
+
+    grid-template-columns: 200px auto 100px;
+    grid-template-rows: 50px auto 150 100px; 
+    grid-template-areas:
+        "header header header"
+        "SideBar content SideBar2"
+        "qvesion content SideBar2"
+        "footer footer footer";
+}
+
+header{
+    background-color: aqua;
+    grid-area: header;
+
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+
+    padding: 0 20px 20px;
+}
+
+.SideBar {
+    grid-area: SideBar;
+    background-color: yellowgreen;
+}
+
+.SideBar2 {
+    grid-area: SideBar2;
+    background-color: gold;
+}
+
+.qvesion {
+    grid-area: Ask a qvesion;
+    background-color: indianred;
+}
+
+main {
+    grid-area: content;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    margin-top: 50px;
+
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul>li:not(:first-child) {
+    padding-left: 20px;
+}
+
+nav ul>li>a {
+    color: violet;
+}
+
+header nav {
+    grid-column: -1;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+    column-gap: 20px;
+    row-gap: 20px;
+}
+/*auto-fill определяет как размещатся картинками при сжатии экрана,если нужно размещать 4 картинки, нужно поставить цифру 4*/
+
+.cards img {
+    width: 100%;
+}
+
+section {
+    margin-top: 20px;
+}
+
+article {
+    margin-top: 20px;
+}
